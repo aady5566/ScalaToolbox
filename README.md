@@ -1,2 +1,2 @@
 #ScalaToolbox
-This is something for applying practical tool with scala.
+Some stuff with Scala.
