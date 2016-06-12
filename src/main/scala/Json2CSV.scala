@@ -1,6 +1,6 @@
+/*
 /**
- * Created by YD on 16/2/22.
- */
+ * Created by YD on 16/2/22.*/
 object mouseTracking_Json2CSV {
   import spray.json._
   import spray.json.DefaultJsonProtocol
@@ -23,17 +23,20 @@ object mouseTracking_Json2CSV {
                            ele_class:String,
                            mousePosX:Int,
                            ele_id:String,
-                           latitude:Int,
-                           longitude:Int,
-                           cdihash:String)
+                           latitude:Double,
+                           longitude:Double,
+                           cdihash:String,
+                           city_name:String,
+                           country_name:String
+                            )
   object YDJsonProtocol extends DefaultJsonProtocol{
-    implicit val mouseFormat = jsonFormat22(mouseTracking)
+    implicit val mouseFormat = jsonFormat24(mouseTracking)
   }
 
 
   def main(args: Array[String]) {
     import scala.io.Source
-    val source = Source.fromFile("/Volumes/jetD_YD/work/雲圖/mouseTracking/20160208.txt").getLines.toArray//read source
+    val source = Source.fromFile("/Volumes/jetD_YD/work/雲圖/mouseTracking/20160213.txt").getLines.toArray//read source
     import java.io.File
     val f = new File("/Volumes/jetD_YD/work/雲圖/mouseTracking/out.csv") //create csv file
     import com.github.tototoshi.csv._
@@ -60,7 +63,9 @@ object mouseTracking_Json2CSV {
       "ele_id",
       "latitude",
       "longitude",
-      "cdihash"
+      "cdihash",
+      "city_name",
+      "country_name"
     ))//header
     for(i <- 0.until(source.length)){
       import YDJsonProtocol._
@@ -87,10 +92,13 @@ object mouseTracking_Json2CSV {
         tempObject.ele_id,
         tempObject.latitude,
         tempObject.longitude,
-        tempObject.cdihash
+        tempObject.cdihash,
+        tempObject.city_name,
+        tempObject.country_name
       ))
     }
     writer.close()
   }
 
 }
+*/

@@ -1,4 +1,5 @@
-import scala.annotation.tailrec {
+import scala.annotation.tailrec
+{
   //Read-Eval-Print-Loop
   //substitution model
   //call-by-value vs. call-by-name
@@ -53,4 +54,17 @@ import scala.annotation.tailrec {
     loop(1,n)
   }
   fac(3)
+}
+{
+  def fib(n: Int): Int = {
+    @tailrec  def loop(curr: Int, next: Int, n: Int): Int={
+      if(n == 1) 1
+      else{
+        if(n == 2) curr
+        else loop(curr+next,curr,n-1)
+      }
+    }
+    loop(1,1,n)
+  }
+  fib(15)
 }

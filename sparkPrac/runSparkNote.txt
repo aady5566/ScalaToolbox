@@ -1,0 +1,8 @@
+#路徑
+/usr/local/Cellar/apache-spark/1.2.0
+
+#注意版本號
+http://stackoverflow.com/questions/26351338/running-spark-scala-example-fails
+
+#Conf
+https://www.zhihu.com/question/23967309

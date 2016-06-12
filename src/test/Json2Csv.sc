@@ -29,9 +29,6 @@
   object YDJsonProtocol extends DefaultJsonProtocol{
     implicit val mouseFormat = jsonFormat22(mouseTracking)
 
-
-
-
     import scala.io.Source
     val source = Source.fromFile("/Volumes/jetD_YD/work/雲圖/mouseTracking/20160208.txt").getLines.toArray//read source
     import java.io.File
@@ -91,6 +88,4 @@
       ))
     }
     writer.close()
-
-
 }
